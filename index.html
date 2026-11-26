@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Management System</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Student Portal</h2>
+
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#add-student">Add Student</a>
+                <a href="#student-records">Student Records</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header>
+                <h1>Student Record Management System</h1>
+                <p>Manage student information easily and efficiently.</p>
+            </header>
+
+            <!-- Dashboard Statistics -->
+            <section class="stats" id="dashboard">
+
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Average Marks</h3>
+                    <p id="averageMarks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Highest Marks</h3>
+                    <p id="highestMarks">0</p>
+                </div>
+
+            </section>
+
+            <!-- Add Student Form -->
+            <section class="form-section" id="add-student">
+
+                <h2>Add Student Details</h2>
+
+                <form id="studentForm">
+
+                    <div class="form-group">
+                        <label>Roll Number</label>
+                        <input type="number" id="roll_no"
+                               placeholder="Enter roll number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input type="text" id="name"
+                               placeholder="Enter student name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="age"
+                               placeholder="Enter age" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Branch</label>
+                        <input type="text" id="branch"
+                               placeholder="Enter branch" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Marks</label>
+                        <input type="number" id="marks"
+                               placeholder="Enter marks"
+                               min="0" max="100" step="0.01" required>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        Add Student
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Search Student -->
+            <section class="search-section">
+
+                <h2>Search Student</h2>
+
+                <input type="number" id="searchRoll"
+                       placeholder="Enter roll number">
+
+                <button type="button" onclick="searchStudent()">
+                    Search
+                </button>
+
+                <div id="searchResult"></div>
+
+            </section>
+
+            <!-- Student Records -->
+            <section class="records-section" id="student-records">
+
+                <h2>Student Records</h2>
+
+                <div class="table-controls">
+                    <button onclick="displayStudents()">
+                        Display All
+                    </button>
+
+                    <button onclick="sortStudents()">
+                        Sort by Marks ↓
+                    </button>
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Branch</th>
+                                <th>Marks</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTable">
+                            <!-- Student records appear here -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <footer>
+                <p>Student Record Management System | Developed using DSA concepts</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
